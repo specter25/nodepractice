@@ -4,6 +4,7 @@ const bodyParser=require('body-parser');
 const mongoose= require('mongoose');
 mongoose.Promise = global.Promise ; 
 
+var port = process.env.PORT || 3000;
 
 
 mongoose.connect('mongodb://localhost/todoapp') ;
@@ -24,6 +25,6 @@ app.use(function(err,req,res,next){
     res.status(422).send({error:err.message});
   });
 
-app.listen(3000,()=>{
-    console.log('listening to port 3000');
+app.listen(port ,()=>{
+    console.log('listening to port '+port );
 });
