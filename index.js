@@ -4,11 +4,10 @@ const bodyParser=require('body-parser');
 const mongoose= require('mongoose');
 mongoose.Promise = global.Promise ; 
 
-var port = process.env.PORT || 3000;
-var conurl = 'mongodb+srv://ujjwal:Jio%401234@cluster1-khf9x.mongodb.net/test?retryWrites=true&w=majority'
+var port = 3000;
 
 
-mongoose.connect(conurl || 'mongodb://localhost/todoapp') ;
+mongoose.connect('mongodb://localhost/todoapp') ;
 mongoose.connection.once('open', ()=>{
     console.log('connection made')
 }).on('error',(err)=>{
